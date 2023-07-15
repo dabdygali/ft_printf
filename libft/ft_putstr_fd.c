@@ -6,19 +6,18 @@
 /*   By: dabdygal <dabdygal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:25:39 by dabdygal          #+#    #+#             */
-/*   Updated: 2023/07/15 18:58:48 by dabdygal         ###   ########.fr       */
+/*   Updated: 2023/07/15 19:06:24 by dabdygal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(const char *s, int fd)
 {
 	if (!s)
 		return ;
 	while (*s)
 	{
-		*s = 50;
 		write(fd, s, sizeof(char));
 		s++;
 	}

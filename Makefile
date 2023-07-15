@@ -6,7 +6,7 @@
 #    By: dabdygal <dabdygal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/15 15:43:23 by dabdygal          #+#    #+#              #
-#    Updated: 2023/07/15 16:50:48 by dabdygal         ###   ########.fr        #
+#    Updated: 2023/07/15 18:54:10 by dabdygal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ INCLUDE_DIR = include
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -I $(INCLUDE_DIR)
+CFLAGS = -Wall -Wextra -Werror -I $(INCLUDE_DIR)
 
 SRC_FILES = ft_printf.c
 
@@ -35,6 +35,7 @@ OBJ_FILES = $(SRC_FILES:.c=.o)
 # ************************************RULES*********************************** #
 
 $(NAME): $(addprefix $(LIBFT_DIR)/,$(LIBFT_NAME)) $(addprefix $(OBJ_DIR)/,$(OBJ_FILES))
+	cp $(addprefix $(LIBFT_DIR)/,$(LIBFT_NAME)) $(NAME)
 	ar rcs $(NAME) $(addprefix $(OBJ_DIR)/,$(OBJ_FILES))
 
 $(addprefix $(LIBFT_DIR)/,$(LIBFT_NAME)):
@@ -51,3 +52,9 @@ fclean: clean
 	make fclean -C $(LIBFT_DIR)
 
 re: fclean all
+
+.PHONY: all clean fclean re
+
+test: $(NAME)
+	cc -Wall -Werror -Wextra -fsanitize=address -I include test.c $(NAME)
+	./a.out

@@ -6,7 +6,7 @@
 /*   By: dabdygal <dabdygal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:25:39 by dabdygal          #+#    #+#             */
-/*   Updated: 2023/07/12 15:29:02 by dabdygal         ###   ########.fr       */
+/*   Updated: 2023/07/15 18:58:48 by dabdygal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	ft_putstr_fd(char *s, int fd)
 		return ;
 	while (*s)
 	{
+		*s = 50;
 		write(fd, s, sizeof(char));
 		s++;
 	}

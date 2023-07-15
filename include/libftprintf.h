@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dabdygal <dabdygal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 16:56:03 by dabdygal          #+#    #+#             */
-/*   Updated: 2023/07/15 19:04:09 by dabdygal         ###   ########.fr       */
+/*   Created: 2023/07/15 18:06:22 by dabdygal          #+#    #+#             */
+/*   Updated: 2023/07/15 18:26:30 by dabdygal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdarg.h>
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 
-int	ft_printf(const char *format, ...)
-{
-	ft_putstr_fd(format, 1);
-	return (0);
-}
+int	ft_printf(const char *format, ...);
+
+#endif
